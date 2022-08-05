@@ -1,0 +1,17 @@
+name: "Testing Backend"
+on: ["push"]
+
+jobs:
+  Testing:
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "Setup Nodejs"
+        uses: actions/setup-node@v3.4.1
+        with:
+          node-version: "18.x"
+      - name: "Install dependencies"
+        run: |
+          npm install
+      - name: "Run tests"
+        run: |
+          npm test
