@@ -9,7 +9,6 @@ jobs:
         uses: actions/setup-node@v3.4.1
         with:
           node-version: "18.x"
-          persist-credentials: false
       - name: "Install dependencies"
         run: |
           npm install
