@@ -14,6 +14,11 @@ app.get("/", (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+const lisnter = app.listen(PORT, () =>
+  console.log(`Listening on port ${PORT}`)
+);
 
-export default app;
+export default {
+  app,
+  close: () => lisnter.close(),
+};
